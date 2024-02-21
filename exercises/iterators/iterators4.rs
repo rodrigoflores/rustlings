@@ -3,18 +3,15 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 pub fn factorial(num: u64) -> u64 {
-    // Complete this function to return the factorial of num
-    // Do not use:
-    // - return
-    // Try not to use:
-    // - imperative style loops (for, while)
-    // - additional variables
-    // For an extra challenge, don't use:
-    // - recursion
-    // Execute `rustlings hint iterators4` for hints.
+    let mut result = 1;
+    let mut numbers = (1..num+1).collect::<Vec<_>>().into_iter();
+    while let Some(i) = numbers.next() {
+        print!("{}", i);
+        result *= i
+    }
+
+    result
 }
 
 #[cfg(test)]
